@@ -24,6 +24,7 @@ tools/build.py             Embeds recipes/*.json into index.html
 | Menu name            | Recipe id              | Source |
 |----------------------|------------------------|--------|
 | Turkey               | `roast-turkey`         | https://www.southernliving.com/recipes/simple-roast-turkey |
+| Ham                  | `glazed-ham`           | https://www.southernliving.com/glazed-spiral-cut-ham-6834021 (glaze overridden by extras) |
 | Dressing             | `sourdough-dressing`   | https://www.southernliving.com/sourdough-dressing-8726869 |
 | Mashed potatoes      | `mashed-potatoes`      | https://www.southernliving.com/recipes/perfect-mashed-potatoes |
 | Green bean casserole | `green-bean-casserole` | https://www.southernliving.com/classic-green-bean-casserole-6828445 |
@@ -37,6 +38,8 @@ The menu order, display names and one-line make-ahead hints live in the `menu` a
 Hand-written additions to an extracted recipe go in `recipes/extras/<id>.json` as `{ "sections": [...] }`. Never edit the extracted file, because re-extraction would wipe the change. `build.py` appends these sections to the recipe's own, or puts them first when a section has `"first": true`. `extras/roast-turkey.json` has two sections:
 - A "first" section with times for the user's actual 10.86 lb turkey. Its roasting-time line is the agent's own estimate.
 - The user's cold-water thawing notes.
+
+An extras file can also replace the extracted `subtitle`, `ingredients` or `steps` outright. `extras/glazed-ham.json` uses this because the user's ham comes with its own glaze packet. It drops Southern Living's three glaze recipes, and the steps say to use the packet.
 
 Section blocks can also be `{ "type": "table", "head": [...], "rows": [[...]] }`, and a list block can set `"ordered": true`.
 

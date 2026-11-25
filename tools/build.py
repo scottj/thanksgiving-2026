@@ -18,6 +18,10 @@ for path in sorted((root / 'recipes' / 'extras').glob('*.json')):
   if path.stem not in recipes:
     raise SystemExit(f'{path.name}: no recipes/{path.name} to extend')
   extra = json.loads(path.read_text(encoding='utf-8'))
+  # "subtitle" / "ingredients" / "steps" in an extras file replace the extracted ones outright.
+  for key in ('subtitle', 'ingredients', 'steps'):
+    if key in extra:
+      recipes[path.stem][key] = extra[key]
   sections = recipes[path.stem]['sections']
   for section in extra.get('sections', []):
     # "first": true puts a section ahead of the extracted ones.
