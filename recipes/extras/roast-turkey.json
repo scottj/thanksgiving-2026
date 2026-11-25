@@ -1,0 +1,88 @@
+{
+  "sections": [
+    {
+      "heading": "Our turkey: 10.86 lbs",
+      "kind": "make-ahead",
+      "first": true,
+      "blocks": [
+        {
+          "type": "list",
+          "content": [
+            { "lead": "Cold-water thaw:", "text": "about 5½ hours if fully frozen (30 minutes per pound), changing the water about 11 times. Less if it has already partly thawed in the fridge." },
+            { "lead": "Fridge thaw:", "text": "2 to 3 days." },
+            { "lead": "Roasting:", "text": "this recipe is written for a 14 to 16 lb turkey, so ours will finish sooner. Start checking the thigh temperature about 1 hour after lowering the oven to 350°F. It's done at 165°F, whatever the clock says." }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Faster thawing: the cold-water method",
+      "kind": "make-ahead",
+      "blocks": [
+        {
+          "type": "p",
+          "content": "The fastest practical and safe way to speed up thawing is the cold-water method. It works even if the turkey is already partially thawed in the refrigerator."
+        },
+        {
+          "type": "h3",
+          "content": "How to do it"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "content": [
+            { "text": "Keep the turkey in its original packaging, provided it is watertight. Otherwise, use a leakproof bag." },
+            { "text": "Completely submerge the turkey in cold tap water in a sink or large container." },
+            { "text": "Change the water every 30 minutes so it stays cold." },
+            { "text": "Allow about 30 minutes per pound for a fully frozen turkey. A partially thawed turkey takes less time." }
+          ]
+        },
+        {
+          "type": "h3",
+          "content": "Estimated thawing times"
+        },
+        {
+          "type": "table",
+          "head": ["Turkey weight", "Time (fully frozen)"],
+          "rows": [
+            ["10 lbs", "5 hours"],
+            ["12 lbs", "6 hours"],
+            ["14 lbs", "7 hours"],
+            ["16 lbs", "8 hours"],
+            ["18 lbs", "9 hours"],
+            ["20 lbs", "10 hours"],
+            ["22 lbs", "11 hours"],
+            ["24 lbs", "12 hours"]
+          ]
+        },
+        {
+          "type": "h3",
+          "content": "Thanksgiving strategy"
+        },
+        {
+          "type": "list",
+          "content": [
+            { "text": "Keep thawing the turkey in the refrigerator overnight." },
+            { "text": "Switch to the cold-water method early Thanksgiving morning." },
+            { "text": "Cook immediately once cold-water thawing is done." }
+          ]
+        },
+        {
+          "type": "h3",
+          "content": "Safety"
+        },
+        {
+          "type": "list",
+          "content": [
+            { "text": "Never use warm or hot water to speed up thawing." },
+            { "text": "Never thaw a turkey on the countertop." },
+            { "text": "Cook immediately after cold-water thawing." },
+            { "text": "A partially frozen turkey can safely be roasted in the oven, but it will need extra cooking time." },
+            { "text": "Never deep-fry a frozen or partially frozen turkey." },
+            { "text": "Make sure the turkey reaches 165°F in the thickest part of the breast, the innermost part of the thigh, and the innermost part of the wing." }
+          ]
+        }
+      ]
+    }
+  ]
+}

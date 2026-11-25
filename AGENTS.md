@@ -34,6 +34,12 @@ tools/build.py             Embeds recipes/*.json into index.html
 
 The menu order, display names and one-line make-ahead hints live in the `menu` array near the top of the module script in `index.html`.
 
+Hand-written additions to an extracted recipe go in `recipes/extras/<id>.json` as `{ "sections": [...] }`. Never edit the extracted file, because re-extraction would wipe the change. `build.py` appends these sections to the recipe's own, or puts them first when a section has `"first": true`. `extras/roast-turkey.json` has two sections:
+- A "first" section with times for the user's actual 10.86 lb turkey. Its roasting-time line is the agent's own estimate.
+- The user's cold-water thawing notes.
+
+Section blocks can also be `{ "type": "table", "head": [...], "rows": [[...]] }`, and a list block can set `"ordered": true`.
+
 `rolls.json` and `apple-pie.json` were written by hand from the brands' official product pages. They also include a few timing suggestions that aren't from the package. Don't run the extractor on them.
 
 ## Adding or refreshing a Southern Living recipe

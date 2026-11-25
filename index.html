@@ -277,13 +277,65 @@ a.menu-item:focus-visible .dish {
   font-size: 0.95rem;
 }
 
+.ahead h3 + p,
+.ahead h3 + h4 {
+  margin-top: 0;
+}
+
+.ahead h4 {
+  margin: 0.75rem 0 0.2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .ahead p {
   margin: 0 0 0.5rem;
 }
 
-.ahead ul {
-  margin: 0.25rem 0 0;
-  padding-left: 1.2rem;
+.ahead ul,
+.ahead ol {
+  margin: 0.25rem 0 0.5rem;
+  padding-left: 1.4rem;
+}
+
+.ahead li {
+  margin-bottom: 0.2rem;
+}
+
+.ahead h3:not(:first-of-type) {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--ahead) 30%, transparent);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.table-wrap table {
+  border-collapse: collapse;
+  min-width: 16rem;
+  font-size: 0.95rem;
+}
+
+.table-wrap th,
+.table-wrap td {
+  padding: 0.3rem 1.5rem 0.3rem 0;
+  text-align: left;
+  border-bottom: 1px solid color-mix(in srgb, var(--ahead) 25%, transparent);
+}
+
+.table-wrap th {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.table-wrap td:first-child {
+  font-weight: bold;
 }
 
 .recipe-section h2 {
@@ -1432,6 +1484,30 @@ details.more summary {
     ],
     "sections": [
       {
+        "heading": "Our turkey: 10.86 lbs",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Cold-water thaw:",
+                "text": "about 5½ hours if fully frozen (30 minutes per pound), changing the water about 11 times. Less if it has already partly thawed in the fridge."
+              },
+              {
+                "lead": "Fridge thaw:",
+                "text": "2 to 3 days."
+              },
+              {
+                "lead": "Roasting:",
+                "text": "this recipe is written for a 14 to 16 lb turkey, so ours will finish sooner. Start checking the thigh temperature about 1 hour after lowering the oven to 350°F. It's done at 165°F, whatever the clock says."
+              }
+            ]
+          }
+        ],
+        "pinned": true
+      },
+      {
         "heading": "How To Prepare a Turkey for Roasting",
         "kind": "make-ahead",
         "blocks": [
@@ -1442,6 +1518,128 @@ details.more summary {
           {
             "type": "p",
             "content": "Save your turkey neck and giblets to make your own turkey stock while you turkey roasts. This will add so much flavor to your homemade turkey gravy."
+          }
+        ]
+      },
+      {
+        "heading": "Faster thawing: the cold-water method",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "The fastest practical and safe way to speed up thawing is the cold-water method. It works even if the turkey is already partially thawed in the refrigerator."
+          },
+          {
+            "type": "h3",
+            "content": "How to do it"
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "content": [
+              {
+                "text": "Keep the turkey in its original packaging, provided it is watertight. Otherwise, use a leakproof bag."
+              },
+              {
+                "text": "Completely submerge the turkey in cold tap water in a sink or large container."
+              },
+              {
+                "text": "Change the water every 30 minutes so it stays cold."
+              },
+              {
+                "text": "Allow about 30 minutes per pound for a fully frozen turkey. A partially thawed turkey takes less time."
+              }
+            ]
+          },
+          {
+            "type": "h3",
+            "content": "Estimated thawing times"
+          },
+          {
+            "type": "table",
+            "head": [
+              "Turkey weight",
+              "Time (fully frozen)"
+            ],
+            "rows": [
+              [
+                "10 lbs",
+                "5 hours"
+              ],
+              [
+                "12 lbs",
+                "6 hours"
+              ],
+              [
+                "14 lbs",
+                "7 hours"
+              ],
+              [
+                "16 lbs",
+                "8 hours"
+              ],
+              [
+                "18 lbs",
+                "9 hours"
+              ],
+              [
+                "20 lbs",
+                "10 hours"
+              ],
+              [
+                "22 lbs",
+                "11 hours"
+              ],
+              [
+                "24 lbs",
+                "12 hours"
+              ]
+            ]
+          },
+          {
+            "type": "h3",
+            "content": "Thanksgiving strategy"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "text": "Keep thawing the turkey in the refrigerator overnight."
+              },
+              {
+                "text": "Switch to the cold-water method early Thanksgiving morning."
+              },
+              {
+                "text": "Cook immediately once cold-water thawing is done."
+              }
+            ]
+          },
+          {
+            "type": "h3",
+            "content": "Safety"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "text": "Never use warm or hot water to speed up thawing."
+              },
+              {
+                "text": "Never thaw a turkey on the countertop."
+              },
+              {
+                "text": "Cook immediately after cold-water thawing."
+              },
+              {
+                "text": "A partially frozen turkey can safely be roasted in the oven, but it will need extra cooking time."
+              },
+              {
+                "text": "Never deep-fry a frozen or partially frozen turkey."
+              },
+              {
+                "text": "Make sure the turkey reaches 165°F in the thickest part of the breast, the innermost part of the thigh, and the innermost part of the wing."
+              }
+            ]
           }
         ]
       }
@@ -1794,7 +1992,7 @@ const recipes = JSON.parse(document.getElementById('recipe-data').textContent);
 // The menu, in serving order. `recipe` is the key of a file in recipes/ (or null);
 // `ahead` is the one-line make-ahead hint shown on the menu.
 const menu = [
-  { name: 'Turkey', recipe: 'roast-turkey', ahead: 'Thaw in the fridge 2 to 3 days ahead' },
+  { name: 'Turkey', recipe: 'roast-turkey', ahead: 'Thaw in the fridge 2 to 3 days ahead, or about 5½ hours in cold water' },
   { name: 'Dressing', recipe: 'sourdough-dressing', ahead: 'Assemble up to 2 days ahead' },
   { name: 'Mashed potatoes', recipe: 'mashed-potatoes', ahead: 'Peel and cut the day before' },
   { name: 'Green bean casserole', recipe: 'green-bean-casserole', ahead: 'Assemble up to 3 days ahead' },
@@ -1893,8 +2091,16 @@ function sentenceCase(text) {
 
 function renderBlocks(blocks, headingTag) {
   return blocks.map((block) => {
+    if (block.type === 'table') {
+      return el('div', { class: 'table-wrap' },
+        el('table', {},
+          el('thead', {}, el('tr', {}, block.head.map((cell) => el('th', { scope: 'col', text: cell })))),
+          el('tbody', {}, block.rows.map((row) => el('tr', {}, row.map((cell) => el('td', { text: cell })))))
+        )
+      );
+    }
     if (block.type === 'list') {
-      return el('ul', {}, block.content.map((item) =>
+      return el(block.ordered ? 'ol' : 'ul', {}, block.content.map((item) =>
         el('li', {}, item.lead ? el('span', { class: 'lead', text: item.lead + ' ' }) : null, item.text)
       ));
     }
@@ -1990,7 +2196,7 @@ function renderRecipe(id) {
         el('h2', { text: 'Make ahead' }),
         aheadSections.map((section) => [
           aheadSections.length > 1 ? el('h3', { text: sentenceCase(section.heading) }) : null,
-          renderBlocks(section.blocks, 'h3')
+          renderBlocks(section.blocks, aheadSections.length > 1 ? 'h4' : 'h3')
         ])
       )
     : null;

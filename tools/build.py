@@ -12,6 +12,20 @@ recipes = {}
 for path in sorted((root / 'recipes').glob('*.json')):
   recipes[path.stem] = json.loads(path.read_text(encoding='utf-8'))
 
+# Hand-written additions live in recipes/extras/<id>.json so re-extracting a
+# recipe never wipes them. Their sections are appended to the recipe's own.
+for path in sorted((root / 'recipes' / 'extras').glob('*.json')):
+  if path.stem not in recipes:
+    raise SystemExit(f'{path.name}: no recipes/{path.name} to extend')
+  extra = json.loads(path.read_text(encoding='utf-8'))
+  sections = recipes[path.stem]['sections']
+  for section in extra.get('sections', []):
+    # "first": true puts a section ahead of the extracted ones.
+    if section.pop('first', False):
+      sections.insert(sum(1 for s in sections if s.get('pinned')), dict(section, pinned=True))
+    else:
+      sections.append(section)
+
 payload = json.dumps(recipes, ensure_ascii=False, indent=2).replace('</', '<\\/')
 page_path = root / 'index.html'
 page = page_path.read_text(encoding='utf-8')
