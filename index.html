@@ -2088,7 +2088,8 @@ function renderRecipe(id) {
       )
     : null;
 
-  app.replaceChildren(
+  // Optional parts (ahead, more) may be null; replaceChildren would render that as "null".
+  app.replaceChildren(...[
     el('nav', { class: 'toolbar' },
       el('a', { class: 'back', href: '#/' }, '‹ Menu'),
       el('div', { class: 'toolbar-actions' }, wakeButton, resetButton)
@@ -2108,7 +2109,7 @@ function renderRecipe(id) {
       el('a', { href: recipe.source, target: '_blank', rel: 'noopener', text: recipe.sourceName || 'Southern Living' }),
       ` · saved ${recipe.fetched}`
     )
-  );
+  ].filter(Boolean));
   window.scrollTo(0, 0);
 }
 
