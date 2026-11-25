@@ -1,0 +1,74 @@
+{
+  "title": "Simple Roasted Turkey",
+  "subtitle": "This classic roast turkey is one you'll want to use year after year at your feast.",
+  "source": "https://www.southernliving.com/recipes/simple-roast-turkey",
+  "fetched": "2026-11-25",
+  "details": {
+    "Active Time": "15 mins",
+    "Roast Time": "2 hrs 15 mins",
+    "Rest Time": "30 mins",
+    "Total Time": "3 hrs",
+    "Servings": "10"
+  },
+  "intro": [
+    "Everyone demands roast turkey at Thanksgiving, but very few really want to be in charge of preparing it. This much-maligned but oh-so-delicious bird has a bad reputation of being too dry, under cooked, or tasteless.",
+    "The secret to a delicious roast turkey is in the prep work: To buy the right size turkey, plan on one to one-and-a-half pounds per person—which will also give you enough for delicious turkey leftovers, such as soups, sandwiches, and turkey casseroles."
+  ],
+  "ingredients": [
+    {
+      "heading": "",
+      "items": [
+        "1 (14- to 16-lb.) fresh or frozen, thawed whole turkey, with giblets and neck reserved for Homemade Turkey Stock",
+        "2 Tbsp. kosher salt",
+        "1 Tbsp. black pepper",
+        "1 large (12 oz.) yellow onion, quartered",
+        "3 bay leaves",
+        "1 head garlic, halved crosswise",
+        "2 Tbsp. olive oil"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Prepare oven and turkey",
+      "paragraphs": [
+        "Preheat oven to 450°F with oven rack in lower third of oven. Place a roasting rack in a large roasting pan lined with aluminum foil. Pat turkey dry with paper towels."
+      ]
+    },
+    {
+      "title": "Season turkey",
+      "paragraphs": [
+        "Season on all sides with salt and pepper; place onion, bay leaves, and garlic in cavity."
+      ]
+    },
+    {
+      "title": "Truss turkey",
+      "paragraphs": [
+        "Tie ends of legs together with kitchen twine; tuck wing tips under. Place on rack in prepared pan, breast side up, and brush with oil."
+      ]
+    },
+    {
+      "title": "Roast turkey",
+      "paragraphs": [
+        "Bake in lower third of preheated oven 45 minutes. Loosely cover turkey with aluminum foil, and reduce oven temperature to 350°F.",
+        "Continue baking until golden brown and a meat thermometer inserted in thickest portion of thigh registers 165°F, 1 1/2 to 2 hours. Transfer to a cutting board, and rest 30 minutes before carving. Pour pan drippings through a fine mesh strainer into a bowl; discard solids. Reserve 1 1/2 cups strained drippings for Old-Fashioned Turkey Gravy or Mushroom Gravy."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "heading": "How To Prepare a Turkey for Roasting",
+      "kind": "make-ahead",
+      "blocks": [
+        {
+          "type": "p",
+          "content": "For the freshest flavor, buy turkey that has been flash frozen after butchering. To allow adequate time for defrosting, plan on two to three days for a 10- to 15-pound bird. Leave the turkey in its original wrapper, place it in a pan to catch any juices, and set the pan in the back (the coldest part) of your refrigerator until it's thawed. Then you are ready to follow your recipe for an easy roast turkey."
+        },
+        {
+          "type": "p",
+          "content": "Save your turkey neck and giblets to make your own turkey stock while you turkey roasts. This will add so much flavor to your homemade turkey gravy."
+        }
+      ]
+    }
+  ]
+}

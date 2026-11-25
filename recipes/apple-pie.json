@@ -1,0 +1,74 @@
+{
+  "title": "Sara Lee Dutch Apple Pie",
+  "subtitle": "Bakes from frozen, with a streusel topping you add before it goes in.",
+  "source": "https://saraleedesserts.com/products/product-details/dutch-apple-pie",
+  "sourceName": "Sara Lee Desserts",
+  "fetched": "2026-11-25",
+  "details": {
+    "Oven": "400°F",
+    "Bake Time": "60 to 65 mins",
+    "Cool Time": "45 mins to 2 hrs",
+    "Servings": "8"
+  },
+  "intro": [],
+  "ingredients": [
+    {
+      "heading": "",
+      "items": [
+        "1 Sara Lee Dutch Apple Pie (34 oz.), frozen, with its streusel packet",
+        "Baking sheet (lined with aluminum foil for easier cleanup)",
+        "Aluminum foil, to shield the crust edges if needed",
+        "Baking thermometer"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Preheat with a baking sheet",
+      "paragraphs": [
+        "Preheat oven to 400°F with a baking sheet on the center rack. Keep the pie frozen until you're ready to bake."
+      ]
+    },
+    {
+      "title": "Add the streusel",
+      "paragraphs": [
+        "Remove the frozen pie from the carton and take off the plastic overwrap. Open the streusel packet, break up the topping with a fork, and spread it evenly over the pie."
+      ]
+    },
+    {
+      "title": "Bake",
+      "paragraphs": [
+        "Place the frozen pie on the preheated baking sheet on the center rack. Bake at 400°F for 60 to 65 minutes, until the topping is an even golden brown.",
+        "Check at 45 minutes. If the crust edges are browning too fast, cover them with foil, but leave the center uncovered."
+      ]
+    },
+    {
+      "title": "Check the temperature",
+      "paragraphs": [
+        "Confirm the inside of the pie reaches 165°F with a baking thermometer."
+      ]
+    },
+    {
+      "title": "Cool",
+      "paragraphs": [
+        "Remove the pie from the oven while it's still on the baking sheet. Never handle the pie pan by its edges; the filling is hot. Cool at room temperature before cutting: about 45 minutes for a warm pie, or 2 hours for a cooler one."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Timing and storage",
+      "kind": "storage",
+      "blocks": [
+        {
+          "type": "p",
+          "content": "Keep the pie frozen until you're ready to bake. It needs about an hour in a 400°F oven, which is a different temperature from everything else, so it's easiest to bake before the turkey goes in or while it roasts if you have a second oven."
+        },
+        {
+          "type": "p",
+          "content": "After baking, cover leftovers with foil. They keep up to 2 days at room temperature or up to 4 days refrigerated."
+        }
+      ]
+    }
+  ]
+}

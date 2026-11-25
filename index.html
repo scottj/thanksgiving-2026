@@ -1,0 +1,2127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thanksgiving 2026</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #faf6ef;
+  --surface: #fffdf9;
+  --ink: #2b211b;
+  --muted: #6f6157;
+  --rule: #e4d9cb;
+  --accent: #9b2335;
+  --accent-soft: #f6e4e3;
+  --ahead: #2f5d4e;
+  --ahead-soft: #e5efe9;
+  --done: #a89a8e;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1714;
+    --surface: #241f1b;
+    --ink: #f1e9df;
+    --muted: #b3a597;
+    --rule: #3a322b;
+    --accent: #e07a84;
+    --accent-soft: #3a2326;
+    --ahead: #8cc7b1;
+    --ahead-soft: #1f302a;
+    --done: #6d625a;
+    color-scheme: dark;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+input,
+textarea {
+  font-size: 16px;
+}
+
+a {
+  color: var(--accent);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: max(2rem, env(safe-area-inset-top)) 1.25rem max(4rem, env(safe-area-inset-bottom));
+}
+
+/* Menu view */
+
+.menu-header {
+  text-align: center;
+  padding-block: 2.5rem 1.5rem;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.menu-header h1 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: clamp(2.4rem, 9vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.menu-header .date {
+  margin: 0;
+  color: var(--muted);
+}
+
+.ornament {
+  display: block;
+  width: 4rem;
+  height: 2px;
+  margin: 1.75rem auto 0;
+  background: var(--accent);
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.menu li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0.25rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.menu-item:hover .dish,
+a.menu-item:focus-visible .dish {
+  color: var(--accent);
+}
+
+.menu-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.dish {
+  display: block;
+  font-size: 1.45rem;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+}
+
+.dish-meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.dish-meta .ahead-note {
+  color: var(--ahead);
+}
+
+.chevron {
+  flex: none;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.no-recipe {
+  font-size: 0.8rem;
+  color: var(--muted);
+  flex: none;
+}
+
+.menu-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Recipe view */
+
+.toolbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: -0.5rem -1.25rem 0;
+  padding: 0.6rem 1.25rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+
+.back {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.35rem 0;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chip {
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--surface);
+}
+
+.recipe-header {
+  padding-top: 2rem;
+}
+
+.recipe-header h1 {
+  margin: 0.4rem 0 0.25rem;
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.facts div {
+  display: flex;
+  flex-direction: column;
+}
+
+.facts dt {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: bold;
+}
+
+.ahead {
+  margin-top: 1.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--ahead-soft);
+  border-left: 4px solid var(--ahead);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.ahead h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--ahead);
+}
+
+.ahead h3 {
+  margin: 0.85rem 0 0.2rem;
+  font-size: 0.95rem;
+}
+
+.ahead p {
+  margin: 0 0 0.5rem;
+}
+
+.ahead ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.recipe-section h2 {
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  font-size: 1.35rem;
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.progress {
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: var(--muted);
+}
+
+.ingredient-group h3 {
+  margin: 1.25rem 0 0.25rem;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+}
+
+.checklist input {
+  flex: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--accent);
+}
+
+.checklist input:checked + span {
+  color: var(--done);
+  text-decoration: line-through;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.step {
+  counter-increment: step;
+  position: relative;
+  padding: 1rem 0 1rem 3.25rem;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+}
+
+.step::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.step.done::before {
+  content: "✓";
+  background: var(--accent);
+  color: var(--surface);
+}
+
+.step.done .step-body {
+  color: var(--done);
+}
+
+.step h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.step p {
+  margin: 0 0 0.5rem;
+}
+
+.step p:last-child {
+  margin-bottom: 0;
+}
+
+.step-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+details.more {
+  margin-top: 2.5rem;
+  border-top: 2px solid var(--ink);
+}
+
+details.more summary {
+  cursor: pointer;
+  padding: 0.75rem 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.article-section h3 {
+  margin: 1.25rem 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.article-section h4 {
+  margin: 0.85rem 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.article-section p,
+.article-section li {
+  color: var(--muted);
+}
+
+.article-section p {
+  margin: 0 0 0.6rem;
+}
+
+.article-section ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.lead {
+  color: var(--ink);
+  font-weight: bold;
+}
+
+.source {
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (max-width: 30rem) {
+  body {
+    font-size: 17px;
+  }
+
+  .toolbar {
+    margin-inline: -1.25rem;
+  }
+
+  .dish {
+    font-size: 1.25rem;
+  }
+}
+
+@media print {
+  .toolbar,
+  details.more {
+    display: none;
+  }
+
+  .step {
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+<body>
+<main id="app"></main>
+
+<script type="application/json" id="recipe-data">
+{
+  "apple-pie": {
+    "title": "Sara Lee Dutch Apple Pie",
+    "subtitle": "Bakes from frozen, with a streusel topping you add before it goes in.",
+    "source": "https://saraleedesserts.com/products/product-details/dutch-apple-pie",
+    "sourceName": "Sara Lee Desserts",
+    "fetched": "2026-11-25",
+    "details": {
+      "Oven": "400°F",
+      "Bake Time": "60 to 65 mins",
+      "Cool Time": "45 mins to 2 hrs",
+      "Servings": "8"
+    },
+    "intro": [],
+    "ingredients": [
+      {
+        "heading": "",
+        "items": [
+          "1 Sara Lee Dutch Apple Pie (34 oz.), frozen, with its streusel packet",
+          "Baking sheet (lined with aluminum foil for easier cleanup)",
+          "Aluminum foil, to shield the crust edges if needed",
+          "Baking thermometer"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Preheat with a baking sheet",
+        "paragraphs": [
+          "Preheat oven to 400°F with a baking sheet on the center rack. Keep the pie frozen until you're ready to bake."
+        ]
+      },
+      {
+        "title": "Add the streusel",
+        "paragraphs": [
+          "Remove the frozen pie from the carton and take off the plastic overwrap. Open the streusel packet, break up the topping with a fork, and spread it evenly over the pie."
+        ]
+      },
+      {
+        "title": "Bake",
+        "paragraphs": [
+          "Place the frozen pie on the preheated baking sheet on the center rack. Bake at 400°F for 60 to 65 minutes, until the topping is an even golden brown.",
+          "Check at 45 minutes. If the crust edges are browning too fast, cover them with foil, but leave the center uncovered."
+        ]
+      },
+      {
+        "title": "Check the temperature",
+        "paragraphs": [
+          "Confirm the inside of the pie reaches 165°F with a baking thermometer."
+        ]
+      },
+      {
+        "title": "Cool",
+        "paragraphs": [
+          "Remove the pie from the oven while it's still on the baking sheet. Never handle the pie pan by its edges; the filling is hot. Cool at room temperature before cutting: about 45 minutes for a warm pie, or 2 hours for a cooler one."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Timing and storage",
+        "kind": "storage",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Keep the pie frozen until you're ready to bake. It needs about an hour in a 400°F oven, which is a different temperature from everything else, so it's easiest to bake before the turkey goes in or while it roasts if you have a second oven."
+          },
+          {
+            "type": "p",
+            "content": "After baking, cover leftovers with foil. They keep up to 2 days at room temperature or up to 4 days refrigerated."
+          }
+        ]
+      }
+    ]
+  },
+  "cranberry-sauce": {
+    "title": "Homemade Cranberry Sauce",
+    "subtitle": "No Thanksgiving plate is complete without cranberry sauce.",
+    "source": "https://www.southernliving.com/recipes/homemade-cranberry-sauce",
+    "fetched": "2026-11-25",
+    "details": {
+      "Active Time": "25 mins",
+      "Total Time": "55 mins",
+      "Servings": "6"
+    },
+    "intro": [
+      "Put down the can, and give this homemade cranberry sauce recipe a whirl. A good Thanksgiving spread has a mix of the classics—some bring a sense of family tradition; others are there to please the crowd. This bright and vibrant homemade cranberry sauce brings the best of both worlds.",
+      "Simple enough, but still made from scratch, it might give grandma's cranberry salad a run for its money. Plus, it's just tart and sweet enough to be the perfect people-pleaser.",
+      "This cranberry sauce is good served warm, cold, or at room temperature and best shared with those you love around the holiday table."
+    ],
+    "ingredients": [
+      {
+        "heading": "",
+        "items": [
+          "1 (12-oz.) pkg. frozen cranberries (about 3 cups)",
+          "1 1/2 cups packed light brown sugar",
+          "1 cup fresh orange juice (from 2 large oranges)",
+          "1 tsp. kosher salt",
+          "1 cinnamon stick",
+          "1/2 cup chopped toasted pecans"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Bring berries, sugar, and juice to a boil",
+        "paragraphs": [
+          "Stir together cranberries, sugar, juice, salt, and cinnamon stick in a medium saucepan. (Reserve pecans.) Bring to a boil over high; boil, stirring occasionally, 3 minutes. Reduce heat to medium; cook, stirring often, until most of the cranberries have burst and liquid is syrupy, about 15 minutes. Remove from heat. Remove and discard cinnamon stick."
+        ]
+      },
+      {
+        "title": "Add pecans",
+        "paragraphs": [
+          "Stir in pecans. Transfer mixture to a heatproof bowl."
+        ]
+      },
+      {
+        "title": "Cool or chill",
+        "paragraphs": [
+          "Let stand 30 minutes, or cover and refrigerate until chilled, at least 4 hours or up to 1 week."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What's In Cranberry Sauce?",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "This cranberry sauce recipe is fairly streamlined. It calls for cranberry, light brown sugar, and a bit of citrus. Salt helps to balance the sweetness, and cinnamon brings a warm spice note. Pecans are also called for; they provide a nice textural contrast. But you can skip them entirely or opt for another nut or crunch toppings, like pumpkin seeds."
+          }
+        ]
+      },
+      {
+        "heading": "How To Make Cranberry Sauce",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Making homemade cranberry sauce can be rather straightforward and simple, as this recipe demonstrates. You just need to get the cranberries, sugar, and orange juice bubbling so that berries will swell and burst. That doesn't require a lot of babysitting. Here's a bit more about the process."
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Step 1.",
+                "text": "In a medium saucepan, combine the cranberries, orange juice, brown sugar, cinnamon, and salt. Bring to a boil."
+              },
+              {
+                "lead": "Step 2.",
+                "text": "Once you get the cranberry sauce mixture boiling, let it boil for about 3 minutes. Stir occasionally. You don't have to stir too much though. Just let the berries and mixture boil for a few minutes."
+              },
+              {
+                "lead": "Step 3.",
+                "text": "After the sauce has been boiling for a bit, reduce the heat to medium. Let the sauce cook and bubble away for another 15 minutes. You can stir occasionally, and do keep an eye on it. You want to make sure the cranberries have burst and that the syrupy liquid of the sauce is coming together."
+              },
+              {
+                "lead": "Step 4.",
+                "text": "When the sauce is thickened up nicely, remove the saucepan from the heat, and pluck out the cinnamon stick. Stir in the pecans, then pour the cranberry sauce into a heat-safe bowl or dish. Let the cranberry sauce cool at room temperature for 30 minutes. If you prefer a cold cranberry sauce, let it cool for about 30 minutes, and then chill in the refrigerator until time to serve."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "What's The Difference Between Cranberry Sauce And Cranberry Jelly?",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Good question! They're often used interchangeably, but they really describe two different dishes."
+          },
+          {
+            "type": "p",
+            "content": "Cranberry jelly is thick and solid. It's the stuff that slips out of a can and retains the ridges. Cranberry sauce, on the other hand, is much looser and gooey. It shouldn't be thin and liquid-y, like a soup, but it will be pourable, or spoonable, whereas cranberry jelly needs slicing."
+          }
+        ]
+      },
+      {
+        "heading": "Can I Use Fresh Cranberries Instead Of Frozen?",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "If you're looking at this recipe close to Thanksgiving, you're probably seeing loads of fresh cranberries at the store and wondering if you can use those for cranberry sauce instead of frozen. The answer? Absolutely. In fact, you don't need to adjust anything you do in this recipe, but keep an eye on the sauce during the simmer stage. Cranberry sauce made with fresh berries may thicken just a bit faster because there's less liquid."
+          }
+        ]
+      }
+    ]
+  },
+  "green-bean-casserole": {
+    "title": "Classic Green Bean Casserole",
+    "subtitle": "No holiday spread is complete without an old-fashioned green bean casserole.",
+    "source": "https://www.southernliving.com/classic-green-bean-casserole-6828445",
+    "fetched": "2026-11-25",
+    "details": {
+      "Active Time": "10 mins",
+      "Total Time": "1 hr",
+      "Servings": "8"
+    },
+    "intro": [
+      "Green bean casserole is a staple at every holiday gathering in the South, from Thanksgiving to family potlucks. And while we love variations on a classic—like this slow-cooker green bean casserole—this five-ingredient traditional recipe is the one you should serve up every time you get the chance.",
+      "Learn how to make green bean casserole and also find some fun variations if you want to mix up the traditional side."
+    ],
+    "ingredients": [
+      {
+        "heading": "",
+        "items": [
+          "2 (1-lb.) pkg. frozen haricot verts (extra fine green beans), thawed and squeezed dry",
+          "2 (10 1/2-oz.) cans cream of mushroom soup",
+          "1/4 cup heavy whipping cream",
+          "1 1/2 cups crispy fried onions (such as French’s), divided",
+          "2 oz. Parmesan cheese, grated (about 1/2 cup), divided"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Prepare oven and baking dish",
+        "paragraphs": [
+          "Preheat oven to 350°F. Coat 11- x 7-inch baking dish with cooking spray."
+        ]
+      },
+      {
+        "title": "Combine ingredients",
+        "paragraphs": [
+          "Stir together green beans, soup, heavy cream, 1/2 cup of the onions, and 1/4 cup of the cheese in a large bowl."
+        ]
+      },
+      {
+        "title": "Add casserole filling to baking dish",
+        "paragraphs": [
+          "Transfer to an 11- x 7-inch baking dish. Top with remaining 1 cup onions and 1/4 cup cheese."
+        ]
+      },
+      {
+        "title": "Bake casserole",
+        "paragraphs": [
+          "Cover with aluminum foil, and bake in preheated oven until casserole is hot throughout, about 20 minutes. Uncover, and continue to bake until cheese is golden, about 20 minutes. Remove from oven, and let stand 10 minutes. Serve."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Can You Use Canned or Frozen Beans in Green Bean Casserole?",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Yes, you absolutely can use frozen, canned, or even fresh green beans in green bean casserole. This recipe calls for frozen green beans—as well as thawing and squeezing them to get out as much moisture as possible. If you’re going to use another kind, follow these tips:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "For canned green beans:",
+                "text": "These beans are already tender and cooked, so you only need to drain them before adding to the casserole mixture."
+              },
+              {
+                "lead": "For fresh green beans:",
+                "text": "It’s a good idea to blanch fresh green beans before mixing them into the casserole. Cook the fresh green beans in boiling water for about 6 minutes, then stop the cooking process by moving them to ice water. They’ll finish cooking in the oven."
+              },
+              {
+                "lead": "For frozen green beans:",
+                "text": "Thaw and drain frozen green beans. Then, squeeze them to remove as much moisture as possible. Frozen green beans are typically blanched before flash freezing, so they’re more tender than fresh."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Green Bean Casserole Ingredients and Substitutions",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "To make green bean casserole, you will need:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Frozen haricot verts:",
+                "text": "These may also be labeled as extra-fine green beans. You’ll need two bags. Thaw them overnight before you plan to mix the casserole ingredients, then drain and squeeze out as much moisture as possible."
+              },
+              {
+                "lead": "Cream of mushroom soup:",
+                "text": "You can also cream of celery soup or cream of golden mushroom soup. If you use an unsalted soup, consider adding 1/4 teaspoon salt."
+              },
+              {
+                "lead": "Heavy whipping cream:",
+                "text": "Adds richness to the filling. Can be substituted with half-and-half, but regular milk would not be thick enough."
+              },
+              {
+                "lead": "Crispy fried onions:",
+                "text": "For a texture contrast and mild onion flavor."
+              },
+              {
+                "lead": "Parmesan cheese:",
+                "text": "Under the fried onions, it adds a nutty flavor and a bit of crunch."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "How To Make Green Bean Casserole",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "This easy green bean casserole takes just 10 active minutes to prepare, so you can focus on the main dishes like spatchcocked turkey or baked ham."
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Combine ingredients:",
+                "text": "Stir together the green beans, soup, heavy cream, and some of the onions and cheese. (If using fresh haricot verts instead of frozen, blanch them first.)"
+              },
+              {
+                "lead": "Fill baking dish:",
+                "text": "Transfer this mixture into a baking dish, topping with onions and cheese. Adding the grated Parmesan cheese before the fried onions allows it to melt better."
+              },
+              {
+                "lead": "Bake casserole:",
+                "text": "Cover the baking dish with aluminum foil, and bake it in the preheated oven for about 20 minutes Uncover it, and continue to bake until the cheese is golden, about another 20 minutes. Remove the dish from the oven, and let it stand for 10 minutes before serving."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "How Do You Keep Green Bean Casserole From Becoming Mushy?",
+        "kind": "tips",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Two key steps will keep a green bean casserole from being too soggy:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Try frozen green beans:",
+                "text": "Because canned green beans are pre-cooked, frozen haricot verts are a preferable option to keep this green bean casserole from getting mushy. In this dish, the crunch from the fried onions also serves as a perfect balance for the tenderness of the haricot verts after cooking."
+              },
+              {
+                "lead": "Don’t cook too long:",
+                "text": "If you choose a green bean casserole recipe that calls for fresh beans (instead of frozen as in this recipe), avoid overcooking them as doing so can result in an undesirably mushy texture."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "How To Make Green Bean Casserole Ahead of Time",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "You can prepare this classic green bean casserole ahead of time, cover it with foil, and refrigerate it for about three days before baking. But leave off the crispy onions before storage."
+          },
+          {
+            "type": "p",
+            "content": "If you will be baking after fridge storage, add a few minutes to the cook time to accommodate the temperature. Or let it stand for about 30 minutes at room temperature before baking. Be sure to add the crispy onions just before the casserole goes into the oven."
+          }
+        ]
+      },
+      {
+        "heading": "Green Bean Casserole Variations",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "This simple five-ingredient green bean casserole is outstanding, but you can add a few things to it for additional flavor:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Swap cheeses:",
+                "text": "In place of Parmesan, try gouda, Swiss, or even Cheddar."
+              },
+              {
+                "lead": "Swap broccoli:",
+                "text": "Make this a creamy broccoli casserole with blanched broccoli florets instead of the green beans."
+              },
+              {
+                "lead": "Add roasted garlic:",
+                "text": "Stir in mashed roasted garlic for loads more umami."
+              },
+              {
+                "lead": "Change soups:",
+                "text": "Cream of mushroom soup is iconic, but cream of celery or even cream of Cheddar soup would be great."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "mashed-potatoes": {
+    "title": "Homemade Mashed Potatoes",
+    "subtitle": "Good homemade mashed potatoes are an essential dinnertime side.",
+    "source": "https://www.southernliving.com/recipes/perfect-mashed-potatoes",
+    "fetched": "2026-11-25",
+    "details": {
+      "Active Time": "22 mins",
+      "Total Time": "43 mins",
+      "Servings": "6 to 8",
+      "Yield": "6 cups"
+    },
+    "intro": [
+      "No Southern holiday spread would be complete without a bowl of homemade mashed potatoes, but we think this recipe is worth enjoying any night of the week. Topped with rich turkey gravy or creamy White Country Gravy, our best mashed potatoes recipe are a favorite for a reason: They're easy, and they're good.",
+      "Get our mashed potatoes recipe, and find your new favorite (and easy) way to make this classic side."
+    ],
+    "ingredients": [
+      {
+        "heading": "",
+        "items": [
+          "3 lbs. Yukon gold potatoes",
+          "2 tsp. salt, divided",
+          "5 Tbsp. butter",
+          "1/3 cup half-and-half",
+          "1/2 cup (4 oz.) softened cream cheese",
+          "3/4 tsp. coarsely ground pepper"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Cook potatoes",
+        "paragraphs": [
+          "Peel potatoes, and cut into 1-inch pieces.",
+          "Bring cold water, potatoes, and 1 tsp. salt to a boil in a medium-size Dutch oven over medium-high heat. Reduce heat to medium-low. Cook potatoes for 16 to 20 minutes or until fork-tender and drain."
+        ]
+      },
+      {
+        "title": "Melt butter and cream cheese",
+        "paragraphs": [
+          "Bring potatoes back to Dutch oven. Cook in Dutch oven until water evaporates and potatoes look dry. Mound potatoes on 1 side; add butter, half-and-half, cream cheese, ground pepper, and remaining 1 tsp. salt to opposite side of Dutch oven. Cook 1 to 2 minutes or until butter is melted and mixture boils."
+        ]
+      },
+      {
+        "title": "Mash the potatoes",
+        "paragraphs": [
+          "After removing from heat, beat at medium speed with a hand-held electric mixer 30 seconds to 1 minute or to desired degree of smoothness. Do not overbeat. Serve warm."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Our Tips for the Best Mashed Potatoes",
+        "kind": "tips",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Mashed potatoes are fairly easy, but even experienced makers need some good advice from time to time:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Don't cut tiny potato pieces:",
+                "text": "You may be tempted to speed up cooking by cutting tiny pieces of potatoes, but that's not a great idea if you want delicious mashed potatoes. The smaller pieces will cook quickly, yes, but they'll also absorb more water. Stick with pieces about 1 inch square."
+              },
+              {
+                "lead": "Don't overwork the potatoes:",
+                "text": "If you remember nothing else, remember this: Our number one tip when making mashed potatoes is to keep an eye on the consistency of the potatoes, and be sure not to overwork the creamy mixture. If too much starch is released while the potatoes are whipped, they will become gummy and unappealing. Just keep the mixer on medium speed, watch the texture, and you should have a delicious bowl of your best mashed potatoes in no time at all."
+              },
+              {
+                "lead": "Warm the butter before mixing:",
+                "text": "Instead of piling cold butter and cream cheese on top of the hot potatoes, let the butter melt and the cream cheese warm slightly against the hot pan. Warm butter and cream cheese will mix better with the potatoes and not leave behind pieces in the potatoes."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "What Are the Best Potatoes for Mashed Potatoes?",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "When making homemade mashed potatoes, it's important to consider how the variety of potato you use will impact the final product. Small, waxy spuds like red potatoes are great for dishes like potato salad, where you want the potatoes to hold their shape."
+          },
+          {
+            "type": "p",
+            "content": "For mashing, however, opt for a starchier potato, such as Yukon gold potatoes or russet potatoes—these high-starch potatoes will result in a smooth, fluffy mash. Our Test Kitchen loves to use Yukon gold potatoes because they're creamy, rich, and buttery—all qualities that we're looking for in our mashed potatoes."
+          }
+        ]
+      },
+      {
+        "heading": "Homemade Mashed Potato Ingredients",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "This recipe for mashed potatoes is fairly classic, so the ingredient list is short:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Yukon gold potatoes:",
+                "text": "These starchy spuds mash well, giving the mashed potatoes a creamy, rich texture."
+              },
+              {
+                "lead": "Salt:",
+                "text": "Salting the water used to boil the potatoes helps to season them from the start. The potatoes absorb the salt in the water, seasoning them from the inside out. Add the remaining teaspoon of salt to taste."
+              },
+              {
+                "lead": "Butter:",
+                "text": "Butter brings richness to these classic, homemade mashed potatoes, and it's one ingredient you should be sure not to skip. In fact, we like to serve these potatoes with another small pat of butter on top."
+              },
+              {
+                "lead": "Half-and-half:",
+                "text": "A 50-50 mix of cream and whole milk brings moisture to your mashed potatoes. If you don't have half-and-half on hand, feel free to substitute with buttermilk, which will give the mashed potatoes a slightly tangier flavor."
+              },
+              {
+                "lead": "Softened cream cheese:",
+                "text": "Cream cheese has a mild flavor, but it's the secret ingredient that brings an unctuous dose of creaminess to these mashed potatoes. Be sure to use softened cream cheese, which will blend into the mixture seamlessly—no lumps here. If you don't have cream cheese on hand, sour cream is a good substitute."
+              },
+              {
+                "lead": "Coarsely ground pepper:",
+                "text": "Homemade mashed potatoes require no bells and whistles—a few cranks of coarsely ground pepper are enough to elevate this dish, accentuating the flavor of the potato."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "How To Make Mashed Potatoes",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Get the full recipe for these mashed potatoes further below. For now, here's a brief outline to give you an idea of how this side dish is made:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Cook the potatoes:",
+                "text": "Boil peeled, chopped potato pieces in salted water until fork tender. Drain, then return to the pot."
+              },
+              {
+                "lead": "Warm butter and cream cheese:",
+                "text": "Push the cooked potatoes to one side of the pot, and heat until dry over medium-low heat. Add the butter, cream cheese, half-and-half and seasonings; let the butter melt and begin to boil."
+              },
+              {
+                "lead": "Mash the potatoes:",
+                "text": "Use a hand-held mix or potato masher to mash the potatoes, being careful to not overbeat. Scoop into a serving bowl, add a pat of butter on top, and serve."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Can You Peel and Chop Potatoes Ahead of Time?",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Yes, you can peel and cut the potatoes for mashed potatoes ahead of time to save as much time as possible. Simply peel and dice the potatoes into 1-inch cubes the day before you plan to make the mashed potatoes, then soak the cut potatoes in a bowl of water overnight in the refrigerator."
+          },
+          {
+            "type": "p",
+            "content": "Submerging the potatoes in water prevents oxidization, a chemical reaction which turns the spuds an unsightly pink-brown color."
+          },
+          {
+            "type": "p",
+            "content": "Keep in mind that, the larger the potato pieces, the longer they'll last submerged in the water. If left to soak for too long, smaller pieces of potato will start to break down. Even large pieces of potato will only hold for up to 24 hours in the water, so don't peel and cut your potatoes any further in advance than one day."
+          }
+        ]
+      },
+      {
+        "heading": "Can You Make Mashed Potatoes Ahead of Time?",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Mashed potatoes hold particularly well in the refrigerator, and the leftovers can be used for all sorts of new dishes (Shepherd's Pie? Yes, please). If you're preparing your mashed potatoes in advance, reheat them on the stove or in the oven."
+          },
+          {
+            "type": "p",
+            "content": "When reheating mashed potatoes, we suggest adding in a little extra liquid, which will keep the potatoes from drying out. We also recommend adding in an extra swirl of butter after you've reheated the potatoes—this trick will make them taste completely fresh."
+          }
+        ]
+      },
+      {
+        "heading": "How To Store Mashed Potatoes",
+        "kind": "storage",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Store cooled mashed potatoes in an airtight container in the refrigerator. They will last three to four days if stored correctly."
+          },
+          {
+            "type": "p",
+            "content": "You can freeze mashed potatoes in an airtight container up to 3 months (longer if you store them reall well). Thaw overnight in the fridge, and reheat on the stove or microwave. Add more butter or cream to make them taste fresh and creamy."
+          }
+        ]
+      },
+      {
+        "heading": "What To Serve With Homemade Mashed Potatoes",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Mashed potatoes are a side you'll find on every Southern sideboard, often served alongside slow-cooker green beans, cornbread dressing, mac and cheese, and a turkey. But these perfect mashed potatoes are also classic enough to make on any ordinary weeknight—serve with roast chicken and sautéed vegetables."
+          }
+        ]
+      }
+    ]
+  },
+  "pumpkin-pie": {
+    "title": "Classic Pumpkin Pie",
+    "subtitle": "When only a perfect slice of pumpkin pie will do.",
+    "source": "https://www.southernliving.com/recipes/pumpkin-pie",
+    "fetched": "2026-11-25",
+    "details": {
+      "Active Time": "25 mins",
+      "Total Time": "3 hrs 30 mins",
+      "Servings": "8"
+    },
+    "intro": [
+      "The perfect pumpkin pie is warmly spiced with a delicate sweetness. It manages both to herald the holiday season’s arrival and bookend it, the satisfying final page on a day of family gathering and celebrations.",
+      "This pumpkin pie recipe is silky, smooth, and has great depth of flavor from the spices and the orange zest. And our recipe for pumpkin pie does all these things beautifully—literally. We’ve added some playful pastry work in the form of piecrust cutouts that sit atop clouds of fluffy maple-flavored whipped cream.",
+      "While we’ve made many pumpkin pie recipes in our Test Kitchens over the years—and there certainly are many more to be found on the internet—we think you’ll agree this Classic Pumpkin Pie manages to capture everything the seasonal dessert should be: It’s simple to make, warmly inviting, and, as any grand dessert should, it stands apart from the basic orange slabs you’ll find in most other holiday displays with its beautiful decorations."
+    ],
+    "ingredients": [
+      {
+        "heading": "Pie",
+        "items": [
+          "1/2 (14.1-oz.) pkg. refrigerated piecrusts",
+          "1 (15-oz.) can pumpkin",
+          "1 1/4 cups evaporated milk (from 1 [12-oz.] can)",
+          "3/4 cup granulated sugar",
+          "1 3/4 tsp. pumpkin pie spice",
+          "1 tsp. vanilla extract",
+          "1/2 tsp. kosher salt",
+          "1/4 tsp. ground ginger",
+          "1/4 tsp. grated orange zest (from 1 orange)",
+          "2 large eggs, at room temperature, lightly beaten"
+        ]
+      },
+      {
+        "heading": "Pumpkin Spice Pie Leaves",
+        "items": [
+          "1/2 (14.1-oz.) pkg. refrigerated piecrusts",
+          "All-purpose flour, for work surface",
+          "1 large egg yolk",
+          "1 Tbsp. heavy whipping cream",
+          "1/4 tsp. pumpkin pie spice",
+          "1/8 tsp. kosher salt"
+        ]
+      },
+      {
+        "heading": "Maple Whipped Cream",
+        "items": [
+          "1 cup heavy whipping cream",
+          "3 Tbsp. pure maple syrup",
+          "1/2 tsp. vanilla extract"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Fit piecrust in pie plate",
+        "paragraphs": [
+          "Preheat oven to 425°F. Unroll crust, and gently fit into a 9-inch pie plate; fold edges under, and crimp."
+        ]
+      },
+      {
+        "title": "Combine pumpkin pie filling",
+        "paragraphs": [
+          "Whisk together pumpkin, evaporated milk, sugar, pumpkin pie spice, vanilla, salt, ginger, and orange zest in a large bowl until smooth. Whisk in eggs until just combined."
+        ]
+      },
+      {
+        "title": "Add filling to crust",
+        "paragraphs": [
+          "Pour filling into crust, and smooth top with an offset spatula."
+        ]
+      },
+      {
+        "title": "Bake pie, then cool",
+        "paragraphs": [
+          "Place Pie on a rimmed baking sheet. Bake in preheated oven 15 minutes. Reduce oven temperature to 350°F, and bake until crust edges are golden brown and center jiggles slightly, 40 to 45 minutes. Remove from oven. Do not turn oven off. Let Pie cool on baking sheet 15 minutes; transfer to a wire rack, and let cool completely, about 2 hours. Cooled Pie may be covered and stored in refrigerator up to 3 days."
+        ]
+      },
+      {
+        "title": "Prepare the Pumpkin Spice Pie Leaves",
+        "paragraphs": [
+          "Roll out piecrust on a lightly floured work surface. Use 2 1/2-inch leaf cutters to cut out 8 leaves, discarding dough scraps. (Or reserve to make Piecrust Crackers.)",
+          "Place leaves on a parchment paper-lined baking sheet. Whisk together egg yolk, cream, pumpkin pie spice, and salt in a small bowl; lightly brush over each leaf.",
+          "Bake at 350°F until golden brown, 10 to 12 minutes. Transfer to a wire rack, and let cool completely, about 15 minutes. Pumpkin Spice Pie Leaves may be stored in an airtight container at room temperature up to 1 week."
+        ]
+      },
+      {
+        "title": "When ready to serve, prepare the Maple Whipped Cream",
+        "paragraphs": [
+          "Beat cream, maple syrup, and vanilla with an electric mixer on medium speed until stiff peaks form, 1 to 2 minutes."
+        ]
+      },
+      {
+        "title": "Assemble pie",
+        "paragraphs": [
+          "Transfer Maple Whipped Cream to a piping bag or ziplock plastic bag with the bottom corner cut off. Pipe 8 dollops of Maple Whipped Cream on Pie, and top each dollop with 1 Pumpkin Spice Pie Leaf. Serve alongside remaining Maple Whipped Cream."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Pumpkin Pie Ingredients",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "To make the filling for this easy pumpkin pie, you will need:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Refrigerated pie crusts:",
+                "text": "You’ll need two pre-made crusts, or you can make your own Double-Crust Pie Pastry."
+              },
+              {
+                "lead": "Canned pumpkin:",
+                "text": "Not pumpkin pie filling."
+              },
+              {
+                "lead": "Evaporated milk:",
+                "text": "The thicker, richer milk helps keep the pie filling luscious."
+              },
+              {
+                "lead": "Granulated sugar:",
+                "text": "Adds sweetness without overpowering the pie filling."
+              },
+              {
+                "text": "Pumpkin pie spice: Make your own, or buy the pre-mixed kind in the spice and baking aisle."
+              },
+              {
+                "lead": "Vanilla extract:",
+                "text": "Elevates all the flavors of the pie."
+              },
+              {
+                "lead": "Kosher salt:",
+                "text": "Just a hint of salt balances the pie’s sweetness."
+              },
+              {
+                "lead": "Ground ginger:",
+                "text": "Classic pumpkin pie seasoning, ginger adds a hint of zing and warmth."
+              },
+              {
+                "lead": "Orange zest:",
+                "text": "Not standard but very much worth the work of zesting an orange. It adds a beautiful floral note to the pie."
+              },
+              {
+                "lead": "Eggs:",
+                "text": "Brings together the pie’s custard filling and texture."
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "content": "For the pumpkin pie spice leaves, you’ll need more pie crust, salt, pumpkin pie spice, and egg, plus heavy whipping cream, as well as flour for the work surface."
+          },
+          {
+            "type": "p",
+            "content": "For the maple whipped cream, you’ll need more vanilla extra, maple syrup, and heavy whipping cream."
+          }
+        ]
+      },
+      {
+        "heading": "How To Make Pumpkin Pie",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "This pumpkin pie is classic and easy, so review this outline, and then find the full recipe with step-by-step photos further below."
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Step 1.",
+                "text": "First prepare by preheating the oven to 425°F. Unroll the crust, fit into a pie plate, fold the edges under, and crimp. You can, as we did, get a little creative with the tines of a fork to stamp a bit of a pattern on the crust. You could also use pastry presses, which are silicone mats that you push into raw dough to form decorations on the crust. This is optional, but it adds to the character of your homemade pumpkin pie."
+              },
+              {
+                "lead": "Step 2.",
+                "text": "Next, whisk together the canned pumpkin, evaporated milk, sugar, pumpkin pie spice, vanilla, salt, ginger, and orange zest until smooth."
+              },
+              {
+                "lead": "Step 3.",
+                "text": "Whisk in the eggs, and then pour the filling into the crust. Smooth the top with a spatula or back of a spoon."
+              },
+              {
+                "lead": "Step 4.",
+                "text": "Bake the pie on a rimmed baking sheet in the preheated oven for 15 minutes. Then reduce the oven temperature to 350°F, and bake for about 40 to 45 more minutes."
+              },
+              {
+                "lead": "Step 5.",
+                "text": "Remove the pie from the oven, but leave the oven on."
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "content": "You can leave the pie plain, adding a bit of whipped cream if you want. But we hope you’ll keep going with the cut-out pie crust cookies."
+          },
+          {
+            "type": "h3",
+            "content": "How To Make Pumpkin Spice Pie Leaves"
+          },
+          {
+            "type": "p",
+            "content": "Finish off this pie with cute leaves with a hint of spice. Let the pie cool completely, first on the baking sheet, and then on a wire rack. While it’s cooling, prepare the pumpkin spice leaves."
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Step 1.",
+                "text": "Roll out pie crust on a lightly-floured work surface, and use cutters to cut eight leaves. You can use the same cutter for all the leaves, or mix and match with a set."
+              },
+              {
+                "lead": "Step 2.",
+                "text": "Place the leaf cutouts on a baking sheet lined with parchment paper."
+              },
+              {
+                "lead": "Step 3.",
+                "text": "Whisk together egg yolk, cream, pumpkin pie spice, and salt. Brush each leaf lightly with the mixture."
+              },
+              {
+                "lead": "Step 4.",
+                "text": "Bake at 350°F until golden brown. Let cool completely on a wire rack."
+              }
+            ]
+          },
+          {
+            "type": "p",
+            "content": "Just before serving, prepare the maple whipped cream. Beat cream, maple syrup, and vanilla with an electric mixer until stiff peaks form."
+          },
+          {
+            "type": "p",
+            "content": "Transfer the cream to a piping bag (or zipper bag with a corner cut off), and place eight dollops on the pie. Top each one with a leaf."
+          }
+        ]
+      },
+      {
+        "heading": "Can You Use Regular Pumpkins for Pie?",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "This pumpkin pie recipe calls for canned pumpkin, an easier and more consistent alternative to fresh. With extra effort, you can also use fresh pie pumpkins instead after making it into a homemade pumpkin puree."
+          }
+        ]
+      },
+      {
+        "heading": "What’s the Difference Between a Carving Pumpkin and a Pie Pumpkin?",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Not all pumpkins are created equal when it comes to transforming them into pies. Carving pumpkins—the type typically used for Halloween jack-o-lanterns—are easier to clean out and reasonably thin and easy to carve."
+          },
+          {
+            "type": "p",
+            "content": "Pie pumpkins on the other hand are relatively smaller with a more rounded form. Their flesh is also more flavorful than carving pumpkins, which typically have little to no flavor if roasted."
+          }
+        ]
+      },
+      {
+        "heading": "Can You Make Pumpkin Pie Ahead of Time?",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "If you wanted to make this pumpkin pie ahead of time, you can bake this pie up to 2 days in advance. Make the cookies, too, but don’t whip the cream or decorate until a few hours before dinner."
+          }
+        ]
+      },
+      {
+        "heading": "How To Store Pumpkin Pie",
+        "kind": "storage",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Pumpkin pie should be refrigerated. Any pie made with dairy or eggs shouldn’t sit out more than 2 hours at room temperature before putting it in the fridge. It can keep up to 3 days in the fridge, though the crust might become a little soggy."
+          }
+        ]
+      }
+    ]
+  },
+  "roast-turkey": {
+    "title": "Simple Roasted Turkey",
+    "subtitle": "This classic roast turkey is one you'll want to use year after year at your feast.",
+    "source": "https://www.southernliving.com/recipes/simple-roast-turkey",
+    "fetched": "2026-11-25",
+    "details": {
+      "Active Time": "15 mins",
+      "Roast Time": "2 hrs 15 mins",
+      "Rest Time": "30 mins",
+      "Total Time": "3 hrs",
+      "Servings": "10"
+    },
+    "intro": [
+      "Everyone demands roast turkey at Thanksgiving, but very few really want to be in charge of preparing it. This much-maligned but oh-so-delicious bird has a bad reputation of being too dry, under cooked, or tasteless.",
+      "The secret to a delicious roast turkey is in the prep work: To buy the right size turkey, plan on one to one-and-a-half pounds per person—which will also give you enough for delicious turkey leftovers, such as soups, sandwiches, and turkey casseroles."
+    ],
+    "ingredients": [
+      {
+        "heading": "",
+        "items": [
+          "1 (14- to 16-lb.) fresh or frozen, thawed whole turkey, with giblets and neck reserved for Homemade Turkey Stock",
+          "2 Tbsp. kosher salt",
+          "1 Tbsp. black pepper",
+          "1 large (12 oz.) yellow onion, quartered",
+          "3 bay leaves",
+          "1 head garlic, halved crosswise",
+          "2 Tbsp. olive oil"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Prepare oven and turkey",
+        "paragraphs": [
+          "Preheat oven to 450°F with oven rack in lower third of oven. Place a roasting rack in a large roasting pan lined with aluminum foil. Pat turkey dry with paper towels."
+        ]
+      },
+      {
+        "title": "Season turkey",
+        "paragraphs": [
+          "Season on all sides with salt and pepper; place onion, bay leaves, and garlic in cavity."
+        ]
+      },
+      {
+        "title": "Truss turkey",
+        "paragraphs": [
+          "Tie ends of legs together with kitchen twine; tuck wing tips under. Place on rack in prepared pan, breast side up, and brush with oil."
+        ]
+      },
+      {
+        "title": "Roast turkey",
+        "paragraphs": [
+          "Bake in lower third of preheated oven 45 minutes. Loosely cover turkey with aluminum foil, and reduce oven temperature to 350°F.",
+          "Continue baking until golden brown and a meat thermometer inserted in thickest portion of thigh registers 165°F, 1 1/2 to 2 hours. Transfer to a cutting board, and rest 30 minutes before carving. Pour pan drippings through a fine mesh strainer into a bowl; discard solids. Reserve 1 1/2 cups strained drippings for Old-Fashioned Turkey Gravy or Mushroom Gravy."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "How To Prepare a Turkey for Roasting",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "For the freshest flavor, buy turkey that has been flash frozen after butchering. To allow adequate time for defrosting, plan on two to three days for a 10- to 15-pound bird. Leave the turkey in its original wrapper, place it in a pan to catch any juices, and set the pan in the back (the coldest part) of your refrigerator until it's thawed. Then you are ready to follow your recipe for an easy roast turkey."
+          },
+          {
+            "type": "p",
+            "content": "Save your turkey neck and giblets to make your own turkey stock while you turkey roasts. This will add so much flavor to your homemade turkey gravy."
+          }
+        ]
+      }
+    ]
+  },
+  "rolls": {
+    "title": "Sister Schubert's Yeast Dinner Rolls",
+    "subtitle": "Frozen, fully proofed and partly baked: they just need a few minutes in the oven.",
+    "source": "https://sisterschuberts.com/products/dinner-yeast-rolls/",
+    "sourceName": "Sister Schubert's",
+    "fetched": "2026-11-25",
+    "details": {
+      "Oven": "350°F",
+      "Bake Time": "5 to 10 mins"
+    },
+    "intro": [],
+    "ingredients": [
+      {
+        "heading": "",
+        "items": [
+          "Sister Schubert's Yeast Dinner Rolls, frozen",
+          "Melted butter (or topping of your choice), for brushing"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Preheat",
+        "paragraphs": [
+          "Preheat oven to 350°F."
+        ]
+      },
+      {
+        "title": "Brush with butter",
+        "paragraphs": [
+          "Remove desired number of frozen rolls from bag. Brush tops of rolls with butter or topping of your choice."
+        ]
+      },
+      {
+        "title": "Bake",
+        "paragraphs": [
+          "Place frozen rolls on baking sheet on middle rack of oven. Heat in preheated oven for 5 to 10 minutes or until desired browning has occurred on top and bottom."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Keep frozen",
+        "kind": "storage",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Keep the rolls in the freezer until you bake them. They go straight from the freezer into the oven; no thawing needed. Since they only need 5 to 10 minutes, bake them while the turkey rests."
+          }
+        ]
+      },
+      {
+        "heading": "Toaster oven",
+        "kind": "tips",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Preheat toaster oven to 350°F. Place desired number of frozen rolls on ungreased toaster oven tray. Bake 10 to 12 minutes or until desired browning has occurred on top and bottom. Handy if the main oven is full."
+          }
+        ]
+      }
+    ]
+  },
+  "sourdough-dressing": {
+    "title": "Sourdough Stuffing",
+    "subtitle": "Savory and sweet sourdough stuffing is hearty and satisfying. It works perfectly with the rest of your Thanksgiving feast.",
+    "source": "https://www.southernliving.com/sourdough-dressing-8726869",
+    "fetched": "2026-11-25",
+    "details": {
+      "Active Time": "35 mins",
+      "Total Time": "1 hr 20 mins",
+      "Servings": "8"
+    },
+    "intro": [
+      "While many Southerners claim cornbread dressing as their must-have Thanksgiving side dish, there’s a sizable number of folks who prefer sourdough stuffing.",
+      "Powered by tangy sourdough bread, this hearty twist on classic stuffing lends itself to multiple tasty variations, like our Stuffing Muffins and our Veggie-Packed Sourdough Stuffing. If you don’t have day-old sourdough bread, toast fresh bread in the often for about 10 minutes to help it dry out and retain its texture in this recipe."
+    ],
+    "ingredients": [
+      {
+        "heading": "",
+        "items": [
+          "1 (1 1/2-lb.) day-old sourdough bread loaf, cut into 3/4-inch cubes (about 12 cups)",
+          "3/4 cup unsalted butter, divided, plus more for greasing dish",
+          "1 lb. sweet Italian sausage",
+          "1 medium-size sweet onion, thinly sliced (about 2 1/2 cups)",
+          "4 large celery stalks, chopped (about 1 1/2 cups)",
+          "3/4 tsp. black pepper",
+          "1 1/2 tsp. kosher salt, divided",
+          "1/4 cup chopped fresh parsley, plus small leaves for garnish",
+          "2 Tbsp. chopped fresh sage, plus small leaves for garnish",
+          "1 Tbsp. fresh thyme leaves, plus more for garnish",
+          "3/4 cup dry white wine",
+          "3 cups chicken stock",
+          "2 large eggs, beaten"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "Prepare oven and baking dish",
+        "paragraphs": [
+          "Preheat oven to 375°F. Butter a large (3-quart) baking dish, and set aside. Place bread cubes in a large heatproof bowl."
+        ]
+      },
+      {
+        "title": "Cook sausage, then onion and celery",
+        "paragraphs": [
+          "Melt 4 tablespoons of the butter in a 12-inch skillet over medium-high. Add sausage; cook, stirring occasionally, until browned and crumbly, about 4 minutes. Transfer to bowl with bread. Place skillet over medium-high heat, and add 4 tablespoons of the butter. Add onion, celery, pepper, and 1/2 teaspoon of the salt; cook, stirring occasionally, until onion is golden brown, about 6 minutes. Stir in parsley, sage, and thyme; cook until fragrant, about 30 seconds.",
+          "Transfer to bowl with bread and sausage."
+        ]
+      },
+      {
+        "title": "Make butter-wine sauce",
+        "paragraphs": [
+          "Add wine to skillet, and increase heat to high. Cook, stirring occasionally, until wine is reduced to about 1/4 cup, about 3 minutes. Add stock and remaining 4 tablespoons butter and 1 teaspoon salt; remove from heat, and stir until butter is melted, about 2 minutes. Pour over bread mixture, stirring to combine. Let cool slightly, about 5 minutes."
+        ]
+      },
+      {
+        "title": "Add eggs",
+        "paragraphs": [
+          "Gently stir beaten eggs into bread mixture."
+        ]
+      },
+      {
+        "title": "Bake stuffing",
+        "paragraphs": [
+          "Transfer mixture to prepared baking dish.",
+          "Bake, uncovered, in preheated oven until golden brown, about 40 minutes. Remove from oven; garnish with parsley, sage, and thyme. Serve immediately."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Ingredients for Sourdough Stuffing",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "Tangy sourdough is the perfect base for this balanced stuffing, with sweet Italian sausage, onion, celery, and a mix of herbs to boost its flavor. To make sourdough stuffing, you'll need:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Day-old sourdough bread loaf:",
+                "text": "A mildly tangy base for the stuffing. The slightly stale texture helps the bread absorb the liquid ingredients without becoming mushy."
+              },
+              {
+                "lead": "Unsalted butter:",
+                "text": "Adds richness and enhances the flavor of the sautéed vegetables and herbs."
+              },
+              {
+                "lead": "Sweet Italian sausage:",
+                "text": "A savory, slightly sweet sausage that adds heartiness and richness to the stuffing."
+              },
+              {
+                "lead": "Sweet onion:",
+                "text": "Adds a natural sweetness and complexity."
+              },
+              {
+                "lead": "Celery stalks:",
+                "text": "For a subtle crunch and depth."
+              },
+              {
+                "lead": "Black pepper and kosher salt:",
+                "text": "Enhances the overall flavor."
+              },
+              {
+                "lead": "Fresh parsley, sage, and thyme:",
+                "text": "Fresh herbs to brighten the flavor and add an earthy touch. This trio works especially well together."
+              },
+              {
+                "lead": "Dry white wine:",
+                "text": "An acidic touch to round out the flavors."
+              },
+              {
+                "lead": "Chicken stock:",
+                "text": "Adds moisture to the stuffing for the right consistency."
+              },
+              {
+                "lead": "Large eggs:",
+                "text": "Binds the stuffing mixture to help set the structure."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Sourdough Stuffing Variations",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "To change up this sourdough stuffing based on your preferences or what you have on hand, consider these variations:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Bread:",
+                "text": "As an alternative, use ciabatta, cornbread, or brioche for a different flavor and texture, adjusting the quantity of liquid as needed for each type."
+              },
+              {
+                "lead": "Protein:",
+                "text": "Swap the sausage with hot Italian sausage, or with turkey or a plant-based sausage for a leaner option."
+              },
+              {
+                "lead": "Veggies:",
+                "text": "Swap the onion with shallot or leeks as desired, or add in bell peppers or mushrooms for an added flavor boost."
+              },
+              {
+                "lead": "Herbs:",
+                "text": "While we prefer fresh herbs, you can substitute with dried varieties if fresh aren't available, using half the amount."
+              },
+              {
+                "lead": "Wine:",
+                "text": "Substitute with apple cider or omit entirely if needed, adjusting the stuffing with extra stock as needed."
+              },
+              {
+                "lead": "Nuts:",
+                "text": "Add toasted pecans or walnuts for added crunch."
+              },
+              {
+                "lead": "Fruits:",
+                "text": "Incorporate a sweet touch with dried cranberries or diced apples."
+              },
+              {
+                "lead": "Cheese:",
+                "text": "Add in grated Parmesan, Gruyère, or sharp Cheddar for a cheesy addition."
+              },
+              {
+                "lead": "Spice:",
+                "text": "Sprinkle in a pinch of nutmeg, smoked paprika, or cayenne for added warmth."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Our Tips for the Best Sourdough Stuffing",
+        "kind": "tips",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "For stuffing with the best texture and flavor, keep these tips in mind:"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "lead": "Good-quality bread:",
+                "text": "Choose an artisan loaf with a chewy crumb and crisp crust for the best texture."
+              },
+              {
+                "lead": "Day-old sourdough:",
+                "text": "Stale bread is key for the best stuffing—it will absorb the liquid without becoming overly mushy. As an alternative, toast fresh bread cubes before using."
+              },
+              {
+                "lead": "Opt for fresh herbs:",
+                "text": "Fresh herbs add color and freshness to the dish."
+              },
+              {
+                "lead": "Avoid overmixing:",
+                "text": "Avoid overmixing, which could break up the sourdough and result in a mushy stuffing."
+              },
+              {
+                "lead": "Bake uncovered:",
+                "text": "Bake the stuffing uncovered for a crisp, golden brown topping and tender center."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Can I Prepare Sourdough Stuffing Ahead?",
+        "kind": "make-ahead",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "If you're trying to get ahead of your holiday prep, you can prepare this stuffing ahead as directed, transferring it to the baking dish. Wrap tightly and refrigerate for up to two days. Let stand at room temperature while the oven preheats and bake as directed before serving. If you're afraid of the stuffing becoming too soggy, you can also store the broth and stuffing mixtures separately, then assemble and bake on the day of serving."
+          }
+        ]
+      },
+      {
+        "heading": "How To Store and Reheat Leftover Stuffing",
+        "kind": "storage",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "To store and reheat leftover sourdough stuffing, cool completely and wrap tightly or pack into an airtight container. Refrigerate for up to four days or freeze up to three months. You can then thaw large portions overnight in the refrigerator if frozen, or reheat small portions straight from the freezer. Reheat in a preheated 350°F oven, tented with foil to prevent excess browning. Remove the foil in the last few minutes of baking to crisp up the top. You can also reheat the stuffing in the microwave or covered on the stovetop, adding a splash of broth if needed to keep it from drying out."
+          }
+        ]
+      },
+      {
+        "heading": "What To Serve With Sourdough Stuffing",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "This sourdough stuffing is guaranteed to become a holiday favorite. Pair with classics like roasted turkey or chicken, cranberry sauce, roasted veggies, green beans, mashed potatoes, collard greens, sweet potato casserole, buttermilk biscuits, and more. But you don't have to wait for a holiday to make this recipe. You can also serve it as a hearty side dish to serve with your favorite protein any night of the week."
+          }
+        ]
+      },
+      {
+        "heading": "More Holiday-Worthy Side Dish Recipes You'll Love",
+        "kind": "other",
+        "blocks": [
+          {
+            "type": "p",
+            "content": "From Brussels sprouts to potatoes, these holiday-worthy dishes add an indulgent twist to your favorite sides;"
+          },
+          {
+            "type": "list",
+            "content": [
+              {
+                "text": "Classic Parmesan Scalloped Potatoes"
+              },
+              {
+                "text": "Oven-Roasted Root Vegetables with Spicy Pecan Topping"
+              },
+              {
+                "text": "Brussels Sprouts with Bacon"
+              },
+              {
+                "text": "Garlic Parmesan Green Beans"
+              },
+              {
+                "text": "Butternut Squash Mac and Cheese"
+              },
+              {
+                "text": "Sweet Potato Casserole with Marshmallows"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+</script>
+
+<script type="module">
+const recipes = JSON.parse(document.getElementById('recipe-data').textContent);
+
+// The menu, in serving order. `recipe` is the key of a file in recipes/ (or null);
+// `ahead` is the one-line make-ahead hint shown on the menu.
+const menu = [
+  { name: 'Turkey', recipe: 'roast-turkey', ahead: 'Thaw in the fridge 2 to 3 days ahead' },
+  { name: 'Dressing', recipe: 'sourdough-dressing', ahead: 'Assemble up to 2 days ahead' },
+  { name: 'Mashed potatoes', recipe: 'mashed-potatoes', ahead: 'Peel and cut the day before' },
+  { name: 'Green bean casserole', recipe: 'green-bean-casserole', ahead: 'Assemble up to 3 days ahead' },
+  { name: 'Cranberry sauce', recipe: 'cranberry-sauce', ahead: 'Make up to 1 week ahead' },
+  { name: 'Rolls', recipe: 'rolls', ahead: 'Bake straight from frozen' },
+  { name: 'Pumpkin pie', recipe: 'pumpkin-pie', ahead: 'Bake up to 2 days ahead' },
+  { name: 'Apple pie', recipe: 'apple-pie', ahead: 'Bake from frozen at 400°F' }
+];
+
+const app = document.getElementById('app');
+const STORAGE_PREFIX = 'thanksgiving-2026:';
+
+// --- Small DOM helper -----------------------------------------------------
+
+function el(tag, props = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [key, value] of Object.entries(props)) {
+    if (value === undefined || value === null || value === false) continue;
+    if (key === 'class') node.className = value;
+    else if (key === 'text') node.textContent = value;
+    else if (key.startsWith('on')) node.addEventListener(key.slice(2), value);
+    else node.setAttribute(key, value === true ? '' : value);
+  }
+  for (const child of children.flat(Infinity)) {
+    if (child === null || child === undefined || child === false) continue;
+    node.append(child instanceof Node ? child : document.createTextNode(child));
+  }
+  return node;
+}
+
+// --- Checklist progress, remembered per recipe in this browser ------------
+
+function loadProgress(id) {
+  try {
+    const raw = localStorage.getItem(STORAGE_PREFIX + id);
+    const parsed = raw ? JSON.parse(raw) : {};
+    return { ingredients: parsed.ingredients || [], steps: parsed.steps || [] };
+  } catch {
+    return { ingredients: [], steps: [] };
+  }
+}
+
+function saveProgress(id, progress) {
+  try {
+    localStorage.setItem(STORAGE_PREFIX + id, JSON.stringify(progress));
+  } catch {
+    // Storage can be unavailable (private mode, blocked site data); progress just won't persist.
+  }
+}
+
+// --- Keep the screen awake while cooking ----------------------------------
+
+let wakeLock = null;
+let wantWakeLock = false;
+
+async function requestWakeLock() {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      wakeLock = null;
+    });
+  } catch {
+    wakeLock = null;
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (wantWakeLock && !wakeLock && document.visibilityState === 'visible') requestWakeLock();
+});
+
+// --- Helpers for recipe content -------------------------------------------
+
+function summaryFor(recipe) {
+  const parts = [];
+  const time = recipe.details['Total Time'] || recipe.details['Bake Time'];
+  if (time) parts.push(time.trim());
+  if (recipe.details.Servings) parts.push(`serves ${recipe.details.Servings.trim()}`);
+  return parts.join(' · ');
+}
+
+function sentenceCase(text) {
+  // Southern Living headings are in Title Case; show them in sentence case.
+  const keepCaps = new Set([
+    'I', 'I\'m', 'Southern', 'Living', 'French’s', 'Italian',
+    'Sister', 'Schubert\'s', 'Sara', 'Lee', 'Dutch'
+  ]);
+  return text
+    .split(' ')
+    .map((word, i) => {
+      if (i === 0) return word.charAt(0).toUpperCase() + word.slice(1);
+      if (keepCaps.has(word.replace(/[?:,.]$/, ''))) return word;
+      return word.toLowerCase();
+    })
+    .join(' ');
+}
+
+function renderBlocks(blocks, headingTag) {
+  return blocks.map((block) => {
+    if (block.type === 'list') {
+      return el('ul', {}, block.content.map((item) =>
+        el('li', {}, item.lead ? el('span', { class: 'lead', text: item.lead + ' ' }) : null, item.text)
+      ));
+    }
+    if (block.type === 'h3') return el(headingTag, { text: sentenceCase(block.content) });
+    return el('p', { text: block.content });
+  });
+}
+
+// --- Views ----------------------------------------------------------------
+
+function renderMenu() {
+  document.title = 'Thanksgiving 2026';
+  app.replaceChildren(
+    el('header', { class: 'menu-header' },
+      el('p', { class: 'eyebrow', text: 'Menu' }),
+      el('h1', { text: 'Thanksgiving dinner' }),
+      el('p', { class: 'date', text: 'Thursday, November 26, 2026' }),
+      el('span', { class: 'ornament', 'aria-hidden': 'true' })
+    ),
+    el('ul', { class: 'menu' }, menu.map((item) => {
+      const recipe = item.recipe && recipes[item.recipe];
+      if (!recipe) {
+        return el('li', {},
+          el('div', { class: 'menu-item' },
+            el('span', { class: 'menu-text' }, el('span', { class: 'dish', text: item.name })),
+            el('span', { class: 'no-recipe', text: 'No recipe yet' })
+          )
+        );
+      }
+      const note = item.ahead;
+      const summary = summaryFor(recipe);
+      return el('li', {},
+        el('a', { class: 'menu-item', href: `#/${item.recipe}` },
+          el('span', { class: 'menu-text' },
+            el('span', { class: 'dish', text: item.name }),
+            el('span', { class: 'dish-meta' },
+              summary,
+              summary && note ? ' · ' : '',
+              note ? el('span', { class: 'ahead-note', text: note }) : null
+            )
+          ),
+          el('span', { class: 'chevron', 'aria-hidden': 'true', text: '›' })
+        )
+      );
+    })),
+    el('p', { class: 'menu-footer', text: 'Tap a dish to open its recipe.' })
+  );
+  window.scrollTo(0, 0);
+}
+
+function renderRecipe(id) {
+  const recipe = recipes[id];
+  const menuItem = menu.find((item) => item.recipe === id);
+  const progress = loadProgress(id);
+  document.title = `${menuItem ? menuItem.name : recipe.title} · Thanksgiving 2026`;
+
+  // Toolbar
+  const wakeButton = 'wakeLock' in navigator
+    ? el('button', {
+        class: 'chip',
+        type: 'button',
+        'aria-pressed': String(wantWakeLock),
+        text: 'Keep screen on',
+        onclick: async (event) => {
+          wantWakeLock = !wantWakeLock;
+          event.currentTarget.setAttribute('aria-pressed', String(wantWakeLock));
+          if (wantWakeLock) await requestWakeLock();
+          else if (wakeLock) await wakeLock.release();
+        }
+      })
+    : null;
+  const resetButton = el('button', {
+    class: 'chip',
+    type: 'button',
+    text: 'Reset checks',
+    onclick: () => {
+      saveProgress(id, { ingredients: [], steps: [] });
+      renderRecipe(id);
+    }
+  });
+
+  // Facts
+  const facts = el('dl', { class: 'facts' },
+    Object.entries(recipe.details).map(([label, value]) =>
+      el('div', {}, el('dt', { text: label }), el('dd', { text: value.trim() }))
+    )
+  );
+
+  // Make-ahead and storage notes go up top, where they're useful for planning.
+  const aheadSections = recipe.sections.filter((s) => s.kind === 'make-ahead' || s.kind === 'storage');
+  const ahead = aheadSections.length
+    ? el('aside', { class: 'ahead', 'aria-label': 'Make ahead' },
+        el('h2', { text: 'Make ahead' }),
+        aheadSections.map((section) => [
+          aheadSections.length > 1 ? el('h3', { text: sentenceCase(section.heading) }) : null,
+          renderBlocks(section.blocks, 'h3')
+        ])
+      )
+    : null;
+
+  // Ingredients checklist
+  const ingredientCount = recipe.ingredients.reduce((n, g) => n + g.items.length, 0);
+  const ingredientProgress = el('span', { class: 'progress' });
+  const updateIngredientProgress = () => {
+    ingredientProgress.textContent = `${progress.ingredients.length} of ${ingredientCount} ready`;
+  };
+  updateIngredientProgress();
+  const ingredients = el('section', { class: 'recipe-section' },
+    el('h2', {}, 'Ingredients', ingredientProgress),
+    recipe.ingredients.map((group, g) =>
+      el('div', { class: 'ingredient-group' },
+        group.heading ? el('h3', { text: sentenceCase(group.heading) }) : null,
+        el('ul', { class: 'checklist' }, group.items.map((item, i) => {
+          const key = `${g}.${i}`;
+          return el('li', {},
+            el('label', {},
+              el('input', {
+                type: 'checkbox',
+                checked: progress.ingredients.includes(key),
+                onchange: (event) => {
+                  progress.ingredients = progress.ingredients.filter((k) => k !== key);
+                  if (event.target.checked) progress.ingredients.push(key);
+                  saveProgress(id, progress);
+                  updateIngredientProgress();
+                }
+              }),
+              el('span', { text: item })
+            )
+          );
+        }))
+      )
+    )
+  );
+
+  // Steps: tap a step to mark it done.
+  const stepProgress = el('span', { class: 'progress' });
+  const updateStepProgress = () => {
+    stepProgress.textContent = `${progress.steps.length} of ${recipe.steps.length} done`;
+  };
+  updateStepProgress();
+  const steps = el('section', { class: 'recipe-section' },
+    el('h2', {}, 'Directions', stepProgress),
+    el('ol', { class: 'steps' }, recipe.steps.map((step, i) => {
+      const item = el('li', {
+        class: progress.steps.includes(i) ? 'step done' : 'step',
+        role: 'checkbox',
+        tabindex: '0',
+        'aria-checked': String(progress.steps.includes(i))
+      },
+        el('div', { class: 'step-body' },
+          step.title ? el('h3', { text: sentenceCase(step.title) }) : null,
+          step.paragraphs.map((p) => el('p', { text: p }))
+        )
+      );
+      const toggle = () => {
+        const done = !progress.steps.includes(i);
+        progress.steps = progress.steps.filter((n) => n !== i);
+        if (done) progress.steps.push(i);
+        item.classList.toggle('done', done);
+        item.setAttribute('aria-checked', String(done));
+        saveProgress(id, progress);
+        updateStepProgress();
+      };
+      item.addEventListener('click', (event) => {
+        if (!window.getSelection().isCollapsed) return;
+        toggle();
+      });
+      item.addEventListener('keydown', (event) => {
+        if (event.key === ' ' || event.key === 'Enter') {
+          event.preventDefault();
+          toggle();
+        }
+      });
+      return item;
+    })),
+    el('p', { class: 'step-hint', text: 'Tap a step to mark it done.' })
+  );
+
+  // Everything else from the article, tucked away.
+  const otherSections = recipe.sections.filter((s) => s.kind !== 'make-ahead' && s.kind !== 'storage');
+  const tipsFirst = [...otherSections].sort((a, b) => (b.kind === 'tips') - (a.kind === 'tips'));
+  const more = otherSections.length
+    ? el('details', { class: 'more' },
+        el('summary', { text: 'Tips and notes from the article' }),
+        tipsFirst.map((section) =>
+          el('section', { class: 'article-section' },
+            el('h3', { text: sentenceCase(section.heading) }),
+            renderBlocks(section.blocks, 'h4')
+          )
+        )
+      )
+    : null;
+
+  app.replaceChildren(
+    el('nav', { class: 'toolbar' },
+      el('a', { class: 'back', href: '#/' }, '‹ Menu'),
+      el('div', { class: 'toolbar-actions' }, wakeButton, resetButton)
+    ),
+    el('header', { class: 'recipe-header' },
+      el('p', { class: 'eyebrow', text: menuItem ? menuItem.name : 'Recipe' }),
+      el('h1', { text: sentenceCase(recipe.title) }),
+      recipe.subtitle ? el('p', { class: 'subtitle', text: recipe.subtitle }) : null,
+      facts
+    ),
+    ahead,
+    ingredients,
+    steps,
+    more,
+    el('p', { class: 'source' },
+      'From ',
+      el('a', { href: recipe.source, target: '_blank', rel: 'noopener', text: recipe.sourceName || 'Southern Living' }),
+      ` · saved ${recipe.fetched}`
+    )
+  );
+  window.scrollTo(0, 0);
+}
+
+// --- Routing --------------------------------------------------------------
+
+function route() {
+  const id = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
+  if (id && recipes[id]) renderRecipe(id);
+  else renderMenu();
+}
+
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "title": "Sister Schubert's Yeast Dinner Rolls",
+  "subtitle": "Frozen, fully proofed and partly baked: they just need a few minutes in the oven.",
+  "source": "https://sisterschuberts.com/products/dinner-yeast-rolls/",
+  "sourceName": "Sister Schubert's",
+  "fetched": "2026-11-25",
+  "details": {
+    "Oven": "350°F",
+    "Bake Time": "5 to 10 mins"
+  },
+  "intro": [],
+  "ingredients": [
+    {
+      "heading": "",
+      "items": [
+        "Sister Schubert's Yeast Dinner Rolls, frozen",
+        "Melted butter (or topping of your choice), for brushing"
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "title": "Preheat",
+      "paragraphs": [
+        "Preheat oven to 350°F."
+      ]
+    },
+    {
+      "title": "Brush with butter",
+      "paragraphs": [
+        "Remove desired number of frozen rolls from bag. Brush tops of rolls with butter or topping of your choice."
+      ]
+    },
+    {
+      "title": "Bake",
+      "paragraphs": [
+        "Place frozen rolls on baking sheet on middle rack of oven. Heat in preheated oven for 5 to 10 minutes or until desired browning has occurred on top and bottom."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Keep frozen",
+      "kind": "storage",
+      "blocks": [
+        {
+          "type": "p",
+          "content": "Keep the rolls in the freezer until you bake them. They go straight from the freezer into the oven; no thawing needed. Since they only need 5 to 10 minutes, bake them while the turkey rests."
+        }
+      ]
+    },
+    {
+      "heading": "Toaster oven",
+      "kind": "tips",
+      "blocks": [
+        {
+          "type": "p",
+          "content": "Preheat toaster oven to 350°F. Place desired number of frozen rolls on ungreased toaster oven tray. Bake 10 to 12 minutes or until desired browning has occurred on top and bottom. Handy if the main oven is full."
+        }
+      ]
+    }
+  ]
+}
